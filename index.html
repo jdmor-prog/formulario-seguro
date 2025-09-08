@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registrar Proyecto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+
+    <section class="hero" aria-label="Intro">
+      <img class="bg-img" src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fondo (reemplazar)">
+      
+      <article class="hero-inner">
+        <section class="hero-card">
+          <img class="logo" src="https://agenciacristal.com/wp-content/uploads/2025/01/logofinal_otro.png" alt="Logo (reemplazar)">
+          <h1>Cuéntanos sobre tu proyecto</h1>
+          <p class="subtitle">Transformamos tu idea en software innovador y de alto impacto</p>
+          <p class="lead">Una vez enviado, nuestro líder de proyectos recibirá una notificación con tu propuesta para evaluarla y darte una respuesta ágil.</p>
+        </section>
+      </article>
+    </section>
+
+    <section class="panel-wrap">
+      <article class="panel" role="region" aria-labelledby="titulo-form">
+        <h2 id="titulo-form">Registrar Proyecto</h2>
+
+        <form action="#" method="post" novalidate>
+          <section class="full">
+            <label for="nombre">Nombre del proyecto</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Nombre del proyecto">
+          </section>
+
+          <section>
+            <label for="plazo">Plazo estimado (Ej: 3 meses)</label>
+            <input id="plazo" name="plazo" type="text" placeholder="Ej: 3 meses">
+          </section>
+
+          <section>
+            <label for="presupuesto">Presupuesto estimado ($)</label>
+            <input id="presupuesto" name="presupuesto" type="number" inputmode="decimal" placeholder="$">
+          </section>
+
+          <section class="full">
+            <label for="descripcion">Descripción del proyecto</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Describe tu idea brevemente..."></textarea>
+          </section>
+
+          <section class="full">
+            <label>Categoría del proyecto</label>
+            <article class="choices" role="group" aria-label="Categoría del proyecto">
+              <label class="pill">
+                <input type="checkbox" name="cat[]" value="web">
+                <span>Web</span>
+              </label>
+              <label class="pill">
+                <input type="checkbox" name="cat[]" value="ia">
+                <span>IA</span>
+              </label>
+              <label class="pill">
+                <input type="checkbox" name="cat[]" value="moviles">
+                <span>Móviles</span>
+              </label>
+              <label class="pill">
+                <input type="checkbox" name="cat[]" value="escritorio">
+                <span>Escritorio</span>
+              </label>
+            </article>
+          </section>
+
+          <section>
+            <label for="nombre_cli">Su nombre</label>
+            <input id="nombre_cli" name="nombre_cli" type="text" placeholder="Tu nombre">
+          </section>
+
+          <section>
+            <label for="whatsapp">Su Whatsapp</label>
+            <input id="whatsapp" name="whatsapp" type="tel" placeholder="Ej: +57 300 000 0000">
+          </section>
+
+          <section class="full">
+            <label for="correo">Su Correo</label>
+            <input id="correo" name="correo" type="email" placeholder="tucorreo@ejemplo.com">
+          </section>
+
+          <section class="actions">
+            <button class="btn" type="submit">Enviar Proyecto</button>
+            <article class="recaptcha" aria-label="reCAPTCHA placeholder">
+              <article class="box" aria-hidden="true"></article>
+              reCAPTCHA
+            </article>
+          </section>
+        </form>
+      </article>
+    </section>
+  </main>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
