@@ -11,6 +11,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
+        if (
+            !nombreInput.value.trim() ||
+            !plazoInput.value.trim() ||
+            !presupuestoInput.value.trim() ||
+            !descripcionInput.value.trim() ||
+            !nombreCliInput.value.trim() ||
+            !whatsappInput.value.trim() ||
+            !correoInput.value.trim()
+        ) {
+            alert('Por favor, completa todos los campos antes de enviar.');
+            return;
+        }
         console.log('Intentando enviar formulario...');
         console.log('Nombre del proyecto:', nombreInput.value);
         console.log('Plazo estimado:', plazoInput.value);
