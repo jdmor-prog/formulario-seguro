@@ -1,5 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,18 +8,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <main class="page">
 
     <section class="hero" aria-label="Intro">
-      <img class="bg-img" src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fondo (reemplazar)">
-      
+      <img class="bg-img"
+        src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Fondo (reemplazar)">
+
       <article class="hero-inner">
         <section class="hero-card">
-          <img class="logo" src="https://agenciacristal.com/wp-content/uploads/2025/01/logofinal_otro.png" alt="Logo (reemplazar)">
+          <img class="logo" src="https://agenciacristal.com/wp-content/uploads/2025/01/logofinal_otro.png"
+            alt="Logo (reemplazar)">
           <h1>Cuéntanos sobre tu proyecto</h1>
           <p class="subtitle">Transformamos tu idea en software innovador y de alto impacto</p>
-          <p class="lead">Una vez enviado, nuestro líder de proyectos recibirá una notificación con tu propuesta para evaluarla y darte una respuesta ágil.</p>
+          <p class="lead">Una vez enviado, nuestro líder de proyectos recibirá una notificación con tu propuesta para
+            evaluarla y darte una respuesta ágil.</p>
         </section>
       </article>
     </section>
@@ -87,16 +93,23 @@
 
           <section class="actions">
             <button class="btn" type="submit">Enviar Proyecto</button>
-            <article class="recaptcha" aria-label="reCAPTCHA placeholder">
-              <article class="box" aria-hidden="true"></article>
-              reCAPTCHA
-            </article>
-          </section>
-        </form>
+            <div class="full">
+              <label for="captchaManual">Captcha</label>
+              <div id="captchaManual"
+                style="font-weight: bold; letter-spacing: 5px; user-select: none; font-size: 24px; margin-bottom: 8px;">
+              </div>
+              <button type="button" id="refreshCaptcha" style="margin-bottom: 12px;">Cambiar código</button>
+              <input type="text" id="inputCaptchaManual" name="captchaManual" placeholder="Escribe el código captcha"
+                required />
+            </div>
       </article>
+    </section>
+    </form>
+    </article>
     </section>
   </main>
   </main>
   <script src="script.js"></script>
 </body>
+
 </html>
