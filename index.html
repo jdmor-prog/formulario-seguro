@@ -7,6 +7,7 @@
   <title>Registrar Proyecto</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -93,21 +94,13 @@
 
           <section class="actions">
             <button class="btn" type="submit">Enviar Proyecto</button>
-            <div class="full">
-              <label for="captchaManual">Captcha</label>
-              <div id="captchaManual"
-                style="font-weight: bold; letter-spacing: 5px; user-select: none; font-size: 24px; margin-bottom: 8px;">
-              </div>
-              <button type="button" id="refreshCaptcha" style="margin-bottom: 12px;">Cambiar código</button>
-              <input type="text" id="inputCaptchaManual" name="captchaManual" placeholder="Escribe el código captcha"
-                required />
+            <div class="full recaptcha-container">
+              <div class="g-recaptcha" data-sitekey="6Le93MorAAAAAETFN862h8e3JntkRwI4E3iRJ8KR"></div>
             </div>
+          </section>
+        </form>
       </article>
     </section>
-    </form>
-    </article>
-    </section>
-  </main>
   </main>
   <script src="script.js"></script>
 </body>

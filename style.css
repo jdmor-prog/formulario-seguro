@@ -201,3 +201,20 @@ textarea:focus {
   background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
   color: #fff;
 }
+
+.recaptcha-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.g-recaptcha {
+  transform: scale(0.9);
+  transform-origin: center;
+}
+
+@media (max-width: 480px) {
+  .g-recaptcha {
+    transform: scale(0.8);
+  }
+}
