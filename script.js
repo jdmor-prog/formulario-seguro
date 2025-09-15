@@ -10,8 +10,56 @@ document.addEventListener("DOMContentLoaded", () => {
   const categoriaInputs = document.querySelectorAll('input[name="cat[]"]')
   const grecaptcha = window.grecaptcha
 
+  const RATE_LIMIT_KEY = "form_submissions"
+  const MAX_SUBMISSIONS = 5
+  const TIME_WINDOW = 60 * 60 * 1000
+
+  function checkRateLimit() {
+    const now = Date.now()
+    const submissions = JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || "[]")
+
+    const recentSubmissions = submissions.filter((timestamp) => now - timestamp < TIME_WINDOW)
+
+    localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(recentSubmissions))
+
+    return recentSubmissions.length < MAX_SUBMISSIONS
+  }
+
+  function addSubmission() {
+    const now = Date.now()
+    const submissions = JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || "[]")
+    submissions.push(now)
+    localStorage.setItem(RATE_LIMIT_KEY, JSON.stringify(submissions))
+  }
+
+  function getRemainingTime() {
+    const submissions = JSON.parse(localStorage.getItem(RATE_LIMIT_KEY) || "[]")
+    if (submissions.length === 0) return 0
+
+    const oldestSubmission = Math.min(...submissions)
+    const timeElapsed = Date.now() - oldestSubmission
+    const remainingTime = TIME_WINDOW - timeElapsed
+
+    return Math.max(0, remainingTime)
+  }
+
+  function formatRemainingTime(milliseconds) {
+    const minutes = Math.ceil(milliseconds / (1000 * 60))
+    if (minutes >= 60) {
+      return "1 hora"
+    }
+    return `${minutes} minutos`
+  }
+
   form.addEventListener("submit", (event) => {
     event.preventDefault()
+
+    if (!checkRateLimit()) {
+      const remainingTime = getRemainingTime()
+      const timeText = formatRemainingTime(remainingTime)
+      alert(`Has superado el número máximo de envíos permitidos. Intenta nuevamente en ${timeText}.`)
+      return
+    }
 
     if (
       !nombreInput.value.trim() ||
@@ -58,6 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Su nombre:", nombreCliInput.value)
     console.log("Whatsapp:", whatsappInput.value)
     console.log("Correo:", correoInput.value)
+
+    addSubmission()
 
     grecaptcha.reset()
 
